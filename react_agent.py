@@ -2,6 +2,7 @@ import os
 from dotenv import load_dotenv, find_dotenv
 from langchain.prompts import PromptTemplate
 from langchain import hub
+
 from langchain.agents import (
     Tool,
     agent_iterator,
@@ -16,8 +17,8 @@ from langchain_openai import ChatOpenAI
 
 # Load environment variables
 load_dotenv(find_dotenv(), override=True)
+os.environ.get("OPENAI_API")
 
-# Initialize LLM
 llm = ChatOpenAI(model_name="------------", temperature=0)
 
 # Define prompt template
